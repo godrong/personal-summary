@@ -22,3 +22,4 @@ GitLens
 格式化
 自动完成
 调试
+### Color Picker for VS Code
