@@ -1,10 +1,9 @@
 ### Auto Close Tag  
 ### Auto Complete Tag
 ### Auto Rename Tag
-### js-beautify for VS Code
+### python for vs code 
 ### Bracket Pair Colorizer      &&  Indent-Rainbow     
 ### Chinese (Simplified) Language Pack for VS Code
-###  code-rhythm
 
 Git History, Search and More (including git log)
 GitLens
