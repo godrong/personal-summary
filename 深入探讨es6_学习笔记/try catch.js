@@ -1,8 +1,8 @@
 https://fed.taobao.org/blog/taofed/do71ct/try-catch-runing-problem/?spm=taofed.homepage.header.7.7eab5ac8v4hMGr
 
 
-使用 try catch 的使用无论是在 try 中的代码还是在 catch 中的代码性能消耗都是一样的。
-需要注意的性能消耗在于 try catch 中不要直接塞进去太多的代码（声明太多的变量），
+1.使用 try catch 的使用无论是在 try 中的代码还是在 catch 中的代码性能消耗都是一样的。
+2.需要注意的性能消耗在于 try catch 中不要直接塞进去太多的代码（声明太多的变量），
 最好是吧所有要执行的代码放在另一个 function 中，通过调用这个 function 来执行。
 
 针对第二点，可以查看 ECMA 中关于 try catch 的解释，在代码进入 try catch 的时候 
