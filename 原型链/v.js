@@ -47,3 +47,9 @@ function Person(name, age){
 }
 const person1 = myNew(Person,'Tom',20)
 console.log(person1)  // Person {name: "Tom", age: 20}
+
+
+
+ 对象身上的__proto__指向我们构造函数的原型对象 
+ let rr = new Star()
+ rr.__proto__ = Star.prototype  
