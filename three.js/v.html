@@ -39,7 +39,7 @@
 			
 		},
 		getRemain:function() {
-			// console.log(this.remain)
+			console.log(this.remain)
 			return this.remain 
 		},
 		getPos:function() {
@@ -47,7 +47,7 @@
 			return this._pos  
 		}
 	} 
-	var hasBanana = 100,maxBanana = 50,dis = 50
+	var hasBanana = 120,maxBanana = 50,dis = 50
 	var swk = new Monkey('孙悟空',maxBanana,0,0,hasBanana) 
 	var carryBanana = function (remain = swk.getRemain()) {
 		if(swk.getPos()>=dis) {
@@ -56,26 +56,30 @@
 			return
 		}
 		if(remain>dis) { // 分多次搬运
-			var n =  Math.ceil((remain - maxBanana)/ dis)    //向上取整
-			if(n<=3) {
+			var n =  Math.ceil((remain - maxBanana)/ dis),y=0    //向上取整
+			if(n<3) {
 				n= 3
-				let y = (remain-maxBanana) /n
-				console.log(y)
-				swk.backForth(n,y)
+				 y = (remain-maxBanana) /n
+				// swk.backForth(n,y)
 			}else if(n%2===0) {
-				n = n+1 
+				n+=3
+				 y = (remain-maxBanana) /n
 			}else if(n%2>0){
-
+				n+=2
+				 y = (remain-maxBanana) /n
 			}
-			carryBanana(dis)
+			console.log('折返跑次数n:'+n,'折返跑距离=剩余香蕉='+y)
+
+			// carryBanana(dis)
 		}
 		else if (remain <=dis) {
 			var _pos = swk.getPos()
 			for(let i=0;i<dis-_pos-1;i++){
 				swk.right()
+				console.log('剩余：'+swk.getRemain()+'位置：'+swk.getPos())
 			}
 		}
-		console.log('剩余：'+swk.getRemain()+'位置：'+swk.getPos())
+		
 	}
 	carryBanana()
 
