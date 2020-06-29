@@ -59,14 +59,14 @@
 			var n =  Math.ceil((remain - maxBanana)/ dis),y=0    //向上取整
 			if(n<3) {
 				n= 3
-				 y = (remain-maxBanana) /n
+				y = (remain-maxBanana) /n
 				// swk.backForth(n,y)
 			}else if(n%2===0) {
 				n+=3
-				 y = (remain-maxBanana) /n
+				y = (remain-maxBanana) /n
 			}else if(n%2>0){
 				n+=2
-				 y = (remain-maxBanana) /n
+				y = (remain-maxBanana) /n
 			}
 			console.log('折返跑次数n:'+n,'折返跑距离=剩余香蕉='+y)
 
