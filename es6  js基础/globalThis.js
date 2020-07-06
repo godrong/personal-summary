@@ -17,3 +17,7 @@ if (typeof globals.setTimeout !== 'function') {
 if (typeof globalThis.setTimeout !== 'function') {
   //  此环境中没有 setTimeout 方法！
 }
+
+
+***  严格模式下this指向的是undefind
+    严格模式下函数不允许有重名的参数
