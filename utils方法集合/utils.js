@@ -521,3 +521,66 @@ export const editSingleDataStatus = (id, data, obj) => {
         Object.assign(data[finded], obj)
     }
 }
+export /**
+ *判断是否在数组内部  返回对应位置和值 
+ *
+ * @param {*} key
+ * @param {*} value
+ * @param {*} arr
+ * @returns
+ */
+const isInArray = (arr,value,key) =>{
+    let elem
+    for (let i=0;i<arr.length;i++){
+        elem = arr [i]
+        if(arr[i]!== null && typeof arr[i] !== "object" && looseEqual(arr[i],value)) return [i,elem]
+        if(looseEqual(elem[key],value)) return [i,elem]  
+    }
+}
+/**
+ *判断是否是对象
+ *
+ * @param {*} obj
+ * @returns
+ */
+function isObject (obj) {
+    return obj !== null && typeof obj === 'object'
+}
+/**
+ *高级函数 对对象的浅相等进行判断  面试题
+ *
+ * @param {*} a
+ * @param {*} b
+ * @returns
+ */
+function looseEqual(a, b) {
+    if (a === b) return true
+    const isObjectA = isObject(a)
+    const isObjectB = isObject(b)
+    if(isObjectA && isObjectB) {
+        try {
+            const isArrayA = Array.isArray(a)
+            const isArrayB = Array.isArray(b)
+            if(isArrayA && isArrayB) {
+                return a.length === b.length && a.every((e, i) => {
+                    return looseEqual(e, b[i])
+                })
+            }else if(!isArrayA && !isArrayB) {
+                const keysA = Object.keys(a)
+                const keysB = Object.keys(b)
+                return keysA.length === keysB.length && keysA.every(function (key) {
+                    return looseEqual(a[key], b[key])
+                })
+            }else {
+                return false
+            }
+        } catch(e) {
+            return false
+        }
+    }else if(!isObjectA && !isObjectB) {
+        return String(a) === String(b)
+    }else {
+        return false
+    }
+}
+
