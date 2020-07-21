@@ -1,4 +1,4 @@
-function cloneDeep4(source, hash = new WeakMap()) {
+function cloneDeep(source, hash = new WeakMap()) {
 
     if (!isObject(source)) return source; 
     if (hash.has(source)) return hash.get(source); // 查哈希表
@@ -10,7 +10,7 @@ function cloneDeep4(source, hash = new WeakMap()) {
     if (symKeys.length) { // 查找成功   
         symKeys.forEach(symKey => {
             if (isObject(source[symKey])) {
-                target[symKey] = cloneDeep4(source[symKey], hash); // 传入哈希表
+                target[symKey] = cloneDeep(source[symKey], hash); // 传入哈希表
             } else {
                 target[symKey] = source[symKey];
             }    
@@ -20,7 +20,7 @@ function cloneDeep4(source, hash = new WeakMap()) {
     for(let key in source) {
         if (Object.prototype.hasOwnProperty.call(source, key)) {
             if (isObject(source[key])) {
-                target[key] = cloneDeep4(source[key], hash); 
+                target[key] = cloneDeep(source[key], hash); 
             } else {
                 target[key] = source[key];
             }
