@@ -16,7 +16,7 @@
         movie :function () {
             console.log('我会演电影')
         }  
-} 
+    } 
     var ldh = new Star('刘德华',28)
     ldh.sing()
 
