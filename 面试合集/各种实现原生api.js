@@ -1,14 +1,14 @@
 
 // 实现instanceof
 function instance_of (L,R){
-    let prototype = R.prototype 
+    let prototype = R.prototype // 目标的原型对象
     while(true){
         if(L===null){
             return false
-        }else if(L.__proto__ === prototype){
+        }else if(L.__proto__ === prototype){ 
             return true 
         }
-        L = L.__proto__
+        L = L.__proto__ //取当前对象的原型对象 再一次循环判断
     }
 }
 function flatten(arr) {
