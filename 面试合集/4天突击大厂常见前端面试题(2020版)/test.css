@@ -70,6 +70,7 @@ window.onload = function(){
 <style>
 .father {
     display:table-cell;
+    position:;
     vertical-align:middle;
     text-align:center;
     // 宽高不能是百分比 固定宽高
