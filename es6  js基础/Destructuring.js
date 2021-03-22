@@ -135,3 +135,12 @@ for (let [,value] of map) {
 加载模块时，往往需要指定输入哪些方法。解构赋值使得输入语句非常清晰。
 
 const { SourceMapConsumer, SourceNode } = require("source-map");
+
+
+Iterator 对象
+定义： 1》为各种数据结构提供一个通用的访问接口，2》使得数据成员按顺序排列 3》
+
+手写iterator  
+
+var it = new _Iterator(['a','b'])
+
