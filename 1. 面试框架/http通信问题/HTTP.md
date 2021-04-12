@@ -17,7 +17,21 @@ CONNECT： 保留将来使用 OPTIONS： 请求查询服务器的性能，或者
  3xx：重定向 - 要完成请求必须进行更进一步的操作 
  4xx：客户端错误 - 请求有语法错误或请求无法实现 
  5xx：服务器端错误 - 服务器未能实现合法的请求
-
+###  什么是浏览器缓存？  
+    浏览器缓存其实就是浏览器保存通过HTTP获取的所有资源,是浏览器将网络资源存储在本地的一种行为。
+    ![https://segmentfault.com/img/remote/1460000017962417?w=449&h=327]
+#### 缓存的资源去哪里了?
+    1. memory cache : 将资源缓存到内存当中。
+    MemoryCache顾名思义，就是将资源缓存到内存中，等待下次访问时不需要重新下载资源，而直接从内存中获取。Webkit早已支持memoryCache。
+    目前Webkit资源分成两类，一类是主资源，比如HTML页面，或者下载项，一类是派生资源，比如HTML页面中内嵌的图片或者脚本链接，分别对应代码中两个类：MainResourceLoader和SubresourceLoader。虽然Webkit支持memoryCache，但是也只是针对派生资源，它对应的类为CachedResource，用于保存原始数据（比如CSS，JS等），以及解码过的图片数据。
+    2. disk cache :
+##### 不同点
+|  memory cache    | disk cache  |
+|  ----  | ----  |
+|  相同点  | 只能存储一些派生类资源文件  | 只能存储一些派生类资源文件  |
+| 不同点  | 退出进程时数据会被清除 | 退出进程时数据不会被清除 |
+| 存储资源  | 一般脚本、字体、图片会存在内存当中 | 一般非脚本会存在内存当中，如css等|
+    
  http缓存
  Cache-Control
  no-cache, no-store, must-revalidate, max-age, public, private	
