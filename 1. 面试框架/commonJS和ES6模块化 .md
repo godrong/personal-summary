@@ -7,4 +7,12 @@ commonJS和ES6模块化
     
 
 
-    
+    webpack 升级 loader 自带的vue-loader   
+    url-loader 
+    ugilfy 
+    打包的bunble 处理js 
+     用split -chunk 
+     将element-ui预打包  dll预编译   不会打包到app.js 
+     vendor包抽离出来
+
+     兼容视频流 hls rtsp rtmp
