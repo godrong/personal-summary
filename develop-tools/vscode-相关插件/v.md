@@ -22,3 +22,5 @@ GitLens
 自动完成
 调试
 ### Color Picker for VS Code
+
+#### 可直接同步git设置 登录vscode
