@@ -1,2 +1,12 @@
 上线后，由我来给团队合并到master，避免他们误操作，
 上线后，还需要走EIP版本发布流程，给master申请发布操作，才能完成tag标记
+
+
+
+git  remote add  upstream  git.xxxx.address
+
+git remote -v
+
+git fetching
+
+git pull upstream git.xxxx.address (targetBranch)
