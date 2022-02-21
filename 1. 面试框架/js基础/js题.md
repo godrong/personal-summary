@@ -7,7 +7,7 @@
 ##### 手写promise.all 伪代码
 
 ```
-function doPromiseAll(promises) {
+function promiseAll(promises) {
     return new Promise((resolve,reject))=>{
         if(!Array.isArray(promises)){
             throw new TypeError("promise must be an array")
@@ -15,7 +15,7 @@ function doPromiseAll(promises) {
         let result = []
         let count = 0
         promises.forEach((promise,idx)=>{
-            promise.then((res)=>{
+            promise.then((res)=>{ 
                 result[idx] = res
                 count++
                 count === promises.length && resolve(result)
@@ -25,6 +25,7 @@ function doPromiseAll(promises) {
         })
     }
 }
+if (!Promise.all) Promise.all = promiseAll;
 ```
 ##### 事件委托机制
     事件委托其实也叫事件代理。
@@ -34,4 +35,6 @@ function doPromiseAll(promises) {
     适合用事件委托的事件：click，mousedown，mouseup，keydown，keyup，keypress 。值得注意的是，mouseover 和mouseout 虽然也有事件冒泡，但是处理它们的时候需要特别的注意，因为需要经常计算它们的位置，处理起来不太容易。
 
 ##### js的继承模式
-    https://www.cnblogs.com/ranyonsue/p/11201730.html    
+    https://www.cnblogs.com/ranyonsue/p/11201730.html   
+    
+     

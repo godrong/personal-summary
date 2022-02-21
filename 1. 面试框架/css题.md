@@ -32,3 +32,7 @@
       justify-content: center;
       align-items: center;
     } 
+
+3. 盒子模型 标准盒模型（内容即宽度高度） IE盒模型（包括border和padding为高宽）
+    如何解决 设置box-sizing:content-box;
+        
